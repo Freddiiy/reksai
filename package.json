@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "ts-node-dev src/index.ts",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "husky": {
+    "hooks": {},
+    "pre-commit": "tsdx lint"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "reksai",
+  "author": "Freddiiy",
+  "module": "dist/reksai.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/reksai.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/reksai.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.0.1",
+    "@types/jest": "^28.1.7",
+    "husky": "^8.0.1",
+    "jest": "^28.1.3",
+    "size-limit": "^8.0.1",
+    "ts-jest": "^28.0.8",
+    "ts-node-dev": "^2.0.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
