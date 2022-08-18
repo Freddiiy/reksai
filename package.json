@@ -1,6 +1,7 @@
 {
   "version": "0.1.0",
   "license": "MIT",
+  "private": false,
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -9,6 +10,10 @@
   ],
   "engines": {
     "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Freddiiy/reksai.git"
   },
   "scripts": {
     "start": "ts-node-dev src/index.ts",
@@ -56,5 +61,13 @@
   },
   "dependencies": {
     "axios": "^0.27.2"
+  },
+  "description": "A typescript Node wrapper for the League of Legends api.",
+  "bugs": {
+    "url": "https://github.com/Freddiiy/reksai/issues"
+  },
+  "homepage": "https://github.com/Freddiiy/reksai#readme",
+  "directories": {
+    "test": "test"
   }
 }
