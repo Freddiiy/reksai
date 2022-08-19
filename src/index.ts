@@ -1,2 +1,2 @@
-import reksai from "./reksai";
-export default reksai
+import Reksai from "./reksai";
+export default Reksai

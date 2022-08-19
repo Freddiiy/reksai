@@ -2,10 +2,10 @@ export interface ChampionResponse {
 	type:    string;
 	format:  string;
 	version: string;
-	data:    {[key: string]: Champion};
+	data:    {[key: string]: IChampion};
 }
 
-export interface Champion {
+export interface IChampion {
 	id:          string;
 	key:         string;
 	name:        string;

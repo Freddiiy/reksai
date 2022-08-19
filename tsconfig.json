@@ -1,10 +1,11 @@
 {
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
   "include": ["src", "types"],
+  "exclude": ["node_modules", "test"],
   "compilerOptions": {
     "target": "ES6",
     "allowJs": true,
-    "module": "ESNext",
+    "module": "CommonJS",
     "importHelpers": true,
     // output .d.ts declaration files for consumers
     "declaration": true,

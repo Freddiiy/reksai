@@ -1,3 +1,4 @@
 export function capitalize(str: string) {
-	return str.charAt(0).toUpperCase() + str.slice(1);
+	const lowercase = str.toLowerCase();
+	return lowercase.charAt(0).toUpperCase() + lowercase.slice(1);
 }
