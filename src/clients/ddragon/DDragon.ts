@@ -9,10 +9,10 @@ import DDragonAssets from "./DDragonAssets";
 
 //TODO: Make the rest of DDragons endpoints.
 class DDragon {
-	public champion;
-	public versions;
-	public item;
-	public asset;
+	public champion: DDragonChampion;
+	public versions: DDragonVersions;
+	public item: DDragonItem;
+	public asset: DDragonAssets;
 	constructor() {
 		this.champion = new DDragonChampion();
 		this.versions = new DDragonVersions();
