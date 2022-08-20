@@ -20,6 +20,7 @@ class Match {
 		return await typeFetch<IMatch>(url, this.apiKey);
 	}
 
+	//TODO: Add type definitions
 	async timelineByMatchId(matchId: string, region: REGIONAL | string = "europe"): Promise<any> {
 		const url = `${API.regional(region)}${this.endpoint}/${matchId}/timeline`;
 		return await typeFetch<Match>(url, this.apiKey);
