@@ -2,7 +2,7 @@ import Reksai from "../src";
 import * as dotenv from 'dotenv'
 dotenv.config();
 
-
+console.log(process.env.RIOT_API_KEY);
 const reksai = new Reksai(process.env.RIOT_API_KEY);
 const main = async() => {
 	const summoner = await reksai.summoner.bySummonerName("Thiccikyu", "euw1");

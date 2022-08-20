@@ -11,7 +11,6 @@ class Summoner extends BaseClient {
 		this.endpoint = "/lol/summoner/v4/summoners"
 	}
 
-	//TODO: Add regional support asap
 	async byAccount(encrypyedAccountId: string, region: PLATFORM | string = "euw1"): Promise<ISummoner> {
 		const url = `${API.platform(region)}${this.endpoint}/by-account/${encrypyedAccountId}`
 		return await typeFetch<ISummoner>(url, this.apiKey);
