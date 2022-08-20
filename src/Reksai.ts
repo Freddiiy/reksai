@@ -14,6 +14,8 @@ class Reksai {
 	 *
 	 * Will return an error if the key could not be read.
 	 */
+
+	//TODO: Wanna use DDragon without apikey.
 	constructor(riotApiKey?: string) {
 		this.ddragon = new DDragon();
 		this.summoner = new Summoner(riotApiKey);

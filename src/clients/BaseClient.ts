@@ -24,3 +24,5 @@ function handleApiKey(key?: string) {
 
 	return key;
 }
+
+export default BaseClient;

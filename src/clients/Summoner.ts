@@ -1,6 +1,7 @@
 import {typeFetch} from "../util/typeFetch";
 import {ISummoner} from "../@types/summoner";
 import API, {PLATFORM} from "../util/apiUrl";
+import BaseClient from "./BaseClient";
 
 class Summoner extends BaseClient {
 	private readonly endpoint: string;

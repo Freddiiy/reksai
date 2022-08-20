@@ -1,6 +1,7 @@
 import {typeFetch} from "../util/typeFetch";
 import API, {REGIONAL} from "../util/apiUrl";
 import {IMatch} from "../@types/match";
+import BaseClient from "./BaseClient";
 
 class Match extends BaseClient {
 	private readonly endpoint: string;
