@@ -2,11 +2,11 @@ import {typeFetch} from "../util/typeFetch";
 import API, {REGIONAL} from "../util/apiUrl";
 import {IMatch} from "../@types/match";
 
-class Match {
-	private readonly apiKey: string;
+class Match extends BaseClient {
 	private readonly endpoint: string;
-	constructor(apiKey: string) {
-		this.apiKey = apiKey;
+
+	constructor(apiKey: string | undefined) {
+		super(apiKey);
 		this.endpoint = "/lol/match/v5/matches"
 	}
 

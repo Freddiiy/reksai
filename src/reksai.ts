@@ -1,10 +1,8 @@
 import DDragon from "./clients/ddragon/DDragon";
 import Summoner from "./clients/Summoner";
-import handleApiKey from "./util/handleApiKey";
 import Match from "./clients/Match";
 
 class Reksai {
-	private readonly key: string;
 	public ddragon: DDragon;
 	public summoner: Summoner;
 	public match: Match;
@@ -17,11 +15,9 @@ class Reksai {
 	 * Will return an error if the key could not be read.
 	 */
 	constructor(riotApiKey?: string) {
-		this.key = handleApiKey(riotApiKey);
-
 		this.ddragon = new DDragon();
-		this.summoner = new Summoner(this.key);
-		this.match = new Match(this.key);
+		this.summoner = new Summoner(riotApiKey);
+		this.match = new Match(riotApiKey);
 	}
 }
 

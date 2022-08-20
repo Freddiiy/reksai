@@ -2,12 +2,11 @@ import {typeFetch} from "../util/typeFetch";
 import {ISummoner} from "../@types/summoner";
 import API, {PLATFORM} from "../util/apiUrl";
 
-class Summoner {
-	private readonly apiKey: string;
+class Summoner extends BaseClient {
 	private readonly endpoint: string;
 
-	constructor(apiKey: string) {
-		this.apiKey = apiKey;
+	constructor(apiKey: string | undefined) {
+		super(apiKey);
 		this.endpoint = "/lol/summoner/v4/summoners"
 	}
 
