@@ -1,11 +1,13 @@
 import DDragon from "./clients/ddragon/DDragon";
 import Summoner from "./clients/Summoner";
 import handleApiKey from "./util/handleApiKey";
+import Match from "./clients/Match";
 
 class Reksai {
 	private readonly key;
 	public ddragon;
 	public summoner;
+	public match;
 
 	/**
 	 * @param riotApiKey
@@ -19,6 +21,7 @@ class Reksai {
 
 		this.ddragon = new DDragon();
 		this.summoner = new Summoner(this.key);
+		this.match = new Match(this.key);
 	}
 }
 

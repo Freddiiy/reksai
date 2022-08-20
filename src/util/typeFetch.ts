@@ -1,11 +1,15 @@
-import axios, {AxiosRequestConfig} from "axios";
+import axios, {AxiosError, AxiosRequestConfig} from "axios";
 
 export async function typeFetch<T>(url: string, apiKey? :string): Promise<T> {
 	if (apiKey === undefined) {
 		return new Promise<T>((resolve, reject) => {
 			axios.get<T>(url)
 				.then((res) => resolve(res.data))
-				.catch((err) => reject(err))
+				.catch((err: AxiosError) => {
+					console.error(err.message)
+					reject(err)
+					throw new Error(err.message)
+				})
 		})
 	} else {
 		const config: AxiosRequestConfig = {
@@ -16,7 +20,11 @@ export async function typeFetch<T>(url: string, apiKey? :string): Promise<T> {
 		return new Promise<T>((resolve, reject) => {
 			axios.get<T>(url, config)
 				.then((res) => resolve(res.data))
-				.catch((err) => reject(err))
+				.catch((err: AxiosError) => {
+					console.error(err.message)
+					reject(err)
+					throw new Error(err.message)
+				})
 		})
 	}
 }
