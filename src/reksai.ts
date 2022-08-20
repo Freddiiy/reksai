@@ -4,10 +4,10 @@ import handleApiKey from "./util/handleApiKey";
 import Match from "./clients/Match";
 
 class Reksai {
-	private readonly key;
-	public ddragon;
-	public summoner;
-	public match;
+	private readonly key: string;
+	public ddragon: DDragon;
+	public summoner: Summoner;
+	public match: Match;
 
 	/**
 	 * @param riotApiKey
