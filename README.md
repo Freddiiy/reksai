@@ -19,7 +19,7 @@ const main = async() => {
 main();
 ```
 
-## Summoner client
+### Summoner client
 ```js
 import reksai from "reksai";
 
@@ -35,7 +35,7 @@ const main = async() => {
 main();
 ```
 
-## Summoner client
+### Match client
 ```js
 import reksai from "reksai";
 
