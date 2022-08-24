@@ -1,9 +1,7 @@
-import DDragon from "./clients/ddragon/DDragon";
 import Summoner from "./clients/Summoner";
 import Match from "./clients/Match";
 
 class Reksai {
-	public ddragon: DDragon;
 	public summoner: Summoner;
 	public match: Match;
 
@@ -17,7 +15,6 @@ class Reksai {
 
 	//TODO: Wanna use DDragon without apikey.
 	constructor(riotApiKey?: string) {
-		this.ddragon = new DDragon();
 		this.summoner = new Summoner(riotApiKey);
 		this.match = new Match(riotApiKey);
 	}
