@@ -1,6 +1,7 @@
 # Reksai
 
 A typescript Node wrapper for the League of Legends api.
+Please expect a lot of breaking changes while I develop the architecture of the package :)
 
 ## Eksamples.
 ### DDragon wrapper.

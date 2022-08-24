@@ -1,5 +1,4 @@
-import {typeFetch} from "../util/typeFetch";
-import API, {REGIONAL} from "../util/apiUrl";
+import {REGIONAL} from "../util/apiUrl";
 import {IMatch} from "../@types/match";
 import BaseClient from "./BaseClient";
 
@@ -12,19 +11,19 @@ class Match extends BaseClient {
 	}
 
 	async idsByPuuid(puuid: string, region: REGIONAL | string = "europe"): Promise<string[]> {
-		const url = `${API.regional(region)}${this.endpoint}/by-puuid/${puuid}/ids`;
-		return await typeFetch<string[]>(url, this.apiKey);
+		const endpoint = `${this.endpoint}/by-puuid/${puuid}/ids`;
+		return await this.get<string[]>(region, endpoint);
 	}
 
 	async byMatchId(matchId: string, region: REGIONAL | string = "europe"): Promise<IMatch> {
-		const url = `${API.regional(region)}${this.endpoint}/${matchId}`;
-		return await typeFetch<IMatch>(url, this.apiKey);
+		const endpoint = `${this.endpoint}/${matchId}`;
+		return await this.get<IMatch>(region, endpoint);
 	}
 
 	//TODO: Add type definitions
 	async timelineByMatchId(matchId: string, region: REGIONAL | string = "europe"): Promise<any> {
-		const url = `${API.regional(region)}${this.endpoint}/${matchId}/timeline`;
-		return await typeFetch<Match>(url, this.apiKey);
+		const endpoint = `${this.endpoint}/${matchId}/timeline`;
+		return await this.get<any>(region, endpoint);
 	}
 }
 

@@ -24,6 +24,7 @@ export enum REGIONAL {
 const API = {
 	platform: (region: PLATFORM | string) => createUrl(region),
 	regional: (region: REGIONAL | string) => createUrl(region),
+	createUrl: (region: REGIONAL | PLATFORM | string) => createUrl(region),
 }
 
 export default API;
