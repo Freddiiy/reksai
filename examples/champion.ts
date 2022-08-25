@@ -6,6 +6,5 @@ const main = async() => {
 
 	console.log(ekko.name); //returns Ekko.
 	console.log(ekkoImage) // Returns url for ekkos image
-
 }
 main();

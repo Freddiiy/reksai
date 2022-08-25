@@ -46,7 +46,7 @@ class DDragonAssets {
 	}
 
 	async item(itemId: string) {
-		if (itemId.includes(".png")) {
+		if (!itemId.includes(".png")) {
 			itemId = `${itemId}.png`;
 		}
 		const latest = await DDragonVersions.getLatestVersion();
@@ -54,15 +54,19 @@ class DDragonAssets {
 	}
 
 	async summonerSpell(spellName: string) {
-		if (spellName.includes(".png")) {
+		if (!spellName.includes(".png")) {
 			spellName = `${spellName}.png`;
 		}
 		const latest = await DDragonVersions.getLatestVersion();
 		return DDragonEndpoints.createUrl(`/cdn/${latest}/img/spell/${spellName}`);
 	}
 
-	async profileIcon(iconId: string) {
-		if (iconId.includes(".png")) {
+	async profileIcon(iconId: string | number) {
+		if (typeof iconId === "number") {
+			iconId = iconId.toString();
+		}
+
+		if (!iconId.includes(".png")) {
 			iconId = `${iconId}.png`;
 		}
 		const latest = await DDragonVersions.getLatestVersion();

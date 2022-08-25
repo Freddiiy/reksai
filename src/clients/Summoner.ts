@@ -12,12 +12,13 @@ class Summoner extends BaseClient {
 	}
 
 	async byAccount(encrypyedAccountId: string, region: PLATFORM | string = "euw1"): Promise<ISummoner> {
-		const url = `${API.platform(region)}${this.endpoint}/by-account/${encrypyedAccountId}`
+		const url = `${API.platform(region)}${this.endpoint}/by-account/${encrypyedAccountId}`;
 		return await typeFetch<ISummoner>(url, this.apiKey);
 	}
 
 	async bySummonerName(summonerName: string, region: PLATFORM | string = "euw1"): Promise<ISummoner> {
-		const url = `${API.platform(region)}${this.endpoint}/by-name/${summonerName}`
+		const urlEncodedName = encodeURIComponent(summonerName);
+		const url = `${API.platform(region)}${this.endpoint}/by-name/${urlEncodedName}`;
 		console.log(url);
 		return await typeFetch<ISummoner>(url, this.apiKey);
 	}
