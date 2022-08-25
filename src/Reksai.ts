@@ -1,9 +1,11 @@
 import Summoner from "./clients/Summoner";
 import Match from "./clients/Match";
+import League from "./clients/League";
 
 class Reksai {
 	public summoner: Summoner;
 	public match: Match;
+	public league: League;
 
 	/**
 	 * @param riotApiKey
@@ -17,6 +19,7 @@ class Reksai {
 	constructor(riotApiKey?: string) {
 		this.summoner = new Summoner(riotApiKey);
 		this.match = new Match(riotApiKey);
+		this.league = new League(riotApiKey);
 	}
 }
 
